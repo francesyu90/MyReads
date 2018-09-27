@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.1.1",
+    "contentful": "^7.0.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-material-ui": "0.0.1",
     "react-scripts": "1.1.5"
   },
   "scripts": {

@@ -8,7 +8,7 @@ class SearchBar extends Component {
         return (
             <div>
                 <SearchIcon />
-                <Input placeholder="Search..." disableUnderline />
+                <Input placeholder="Search by title or author" disableUnderline />
             </div>
         );
     }

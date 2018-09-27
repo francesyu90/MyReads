@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { Input } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 

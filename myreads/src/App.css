@@ -1,3 +1,8 @@
 .nav-bar {
   background-color: black !important;
 }
+
+.link-button {
+  color: white !important;
+  text-decoration: none;
+}

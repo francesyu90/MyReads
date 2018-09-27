@@ -3,6 +3,9 @@ import '../App.css';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import SearchIcon from '@material-ui/icons/Search';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 class CustomizedNavbar extends Component {
     render() {
@@ -10,8 +13,18 @@ class CustomizedNavbar extends Component {
             <AppBar position="static" className="nav-bar">
                 <Toolbar>
                     <Typography variant="title" color="inherit">
-                        MyReads
+                        <Link to="/" className="link-button" >
+                            MyReads
+                        </Link>
                     </Typography>
+                    <div>
+                        <Button>
+                            <Link to="/search" className="link-button"> 
+                                <SearchIcon /> 
+                                Search 
+                            </Link>
+                        </Button>
+                    </div>
                 </Toolbar>
             </AppBar>
         );

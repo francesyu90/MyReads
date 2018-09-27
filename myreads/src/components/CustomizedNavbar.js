@@ -20,7 +20,6 @@ class CustomizedNavbar extends Component {
                     <div>
                         <Button>
                             <Link to="/search" className="link-button"> 
-                                <SearchIcon /> 
                                 Search 
                             </Link>
                         </Button>

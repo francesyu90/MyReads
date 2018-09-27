@@ -6,3 +6,10 @@
   color: white !important;
   text-decoration: none;
 }
+
+.search-page,
+.main-page {
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+}

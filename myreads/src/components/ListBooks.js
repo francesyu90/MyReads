@@ -8,7 +8,7 @@ const shelves = ["currentlyReading", "wantToRead", "read"];
 class ListBooks extends Component {
 
     state = {
-        category: 0, // 0: currently reading, 1: want to read, 2: read
+        category: 0, // 0: currently reading, 1: want to read, 2: read, 3: others
     }
 
     handleChange(event, category) {
@@ -23,7 +23,9 @@ class ListBooks extends Component {
 
         const { category } = this.state;
 
-        return books.filter(book => book.shelf === shelves[category]);
+        return (category === 3)? 
+            books.filter(book => book.shelf === undefined) : 
+            books.filter(book => book.shelf === shelves[category]);
     }
     
     render() {

@@ -3,11 +3,15 @@ import { Input } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 
 class SearchBar extends Component {
+
     render() {
         return (
             <div>
                 <SearchIcon />
-                <Input placeholder="Search by title or author" disableUnderline />
+                <Input 
+                    placeholder="Search by title or author" 
+                    disableUnderline 
+                    onChange = {(event) => this.props.updateQuery(event)}/>
             </div>
         );
     }

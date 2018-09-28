@@ -20,7 +20,8 @@ class SearchResults extends Component {
     render() {
         return(
             <div>
-                { this.state.books.length > 0 && <BooksContainer books={this.state.books} />}
+                { this.state.books && this.state.books.length === 0 && alert("No matched books is found.")}
+                { this.state.books && this.state.books.length > 0 && <BooksContainer books={this.state.books} />}
             </div>
         );
     }

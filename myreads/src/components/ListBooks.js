@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CustomizedTabs from './CustomizedTabs';
+import BooksContainer from './BooksContainer';
 
 class ListBooks extends Component {
 
@@ -21,9 +22,7 @@ class ListBooks extends Component {
         return (
             <div>           
                 <CustomizedTabs handleChange={this.handleChange.bind(this)} category={category}/>
-                { category === 0 && <h1> 0 </h1> }
-                { category === 1 && <h1> 1 </h1> }
-                { category === 2 && <h1> 2 </h1> }
+                <BooksContainer category={category} />
             </div>
        );
     }

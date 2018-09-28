@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import CustomizedTabs from './CustomizedTabs';
 import BooksContainer from './BooksContainer';
 
+const shelves = ["currentlyReading", "wantToRead", "read"];
+
 class ListBooks extends Component {
 
     state = {
@@ -14,15 +16,26 @@ class ListBooks extends Component {
             category: category
         })
     }
+
+    filterBooks() {
+
+        const { books } = this.props;
+
+        const { category } = this.state;
+
+        return books.filter(book => book.shelf === shelves[category]);
+    }
     
     render() {
 
         const { category } = this.state;
 
         return (
-            <div>           
+            <div>  
+
                 <CustomizedTabs handleChange={this.handleChange.bind(this)} category={category}/>
-                <BooksContainer category={category} />
+                
+                <BooksContainer books={this.filterBooks()} />
             </div>
        );
     }

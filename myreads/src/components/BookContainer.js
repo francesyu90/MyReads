@@ -7,15 +7,18 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 class BookContainer extends Component {
 
     render() {
+
+        const { book } = this.props;
+
         return (
-            <div className="book-container">
+            <div className="book-container" key={book.id}>
                 <GridListTile style={{ width: 250, height: 225 }}>
                     <img 
-                        src="https://material-ui.com/static/images/grid-list/breakfast.jpg" 
-                        alt="Hello World" />
+                        src={book.imageLinks.thumbnail}
+                        alt={book.title} />
                     <GridListTileBar
-                        title="Hello World"
-                        subtitle={<span>by: "Hello World" </span>}
+                        title={book.title}
+                        subtitle={<span>by: {book.authors} </span>}
                         actionIcon={
                             <IconButton style={{color: 'rgba(255, 255, 255, 0.54)'}}>
                                 <MoreVertIcon />

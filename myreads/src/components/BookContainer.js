@@ -9,8 +9,6 @@ import Typography from '@material-ui/core/Typography';
 
 import CustomizedDialog from './CustomizedDialog';
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
-
 const options = [
     {
         value: "currentlyReading",
@@ -34,7 +32,7 @@ class BookContainer extends Component {
 
     state = {
         open: false,
-        selectedValue: options[0].value,
+        selectedValue: this.props.book.shelf,
     };
     
     handleClickOpen = () => {

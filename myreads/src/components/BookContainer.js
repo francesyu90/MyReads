@@ -23,14 +23,17 @@ class BookContainer extends Component {
     };
     
     handleClose = value => {
-        this.setState({ selectedValue: value.value, open: false });
+        if(value) {
+            this.setState({ selectedValue: value.value, open: false });
+        }  
     };
 
     updateShelf = book => {
         if (book.shelf !== this.state.selectedValue) {
             BooksAPI.update(book, this.state.selectedValue).then(res => {
-                console.log(res);
-                window.location.reload();
+                if (res) {
+                    window.location.reload();
+                }
             });
         }
     }

@@ -4,8 +4,9 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-
 import Typography from '@material-ui/core/Typography';
+
+import * as BooksAPI from '../api/BooksAPI';
 
 import CustomizedDialog from './CustomizedDialog';
 
@@ -45,6 +46,15 @@ class BookContainer extends Component {
         this.setState({ selectedValue: value.value, open: false });
     };
 
+    updateShelf = book => {
+        if (book.shelf !== this.state.selectedValue) {
+            BooksAPI.update(book, this.state.selectedValue).then(res => {
+                console.log(res);
+                window.location.reload();
+            });
+        }
+    }
+
     render() {
 
         const { book } = this.props;
@@ -78,6 +88,8 @@ class BookContainer extends Component {
                     open={this.state.open}
                     onClose={this.handleClose}
                 />
+
+                {this.updateShelf(book)}
             </div>
         );
     }

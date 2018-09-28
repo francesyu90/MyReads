@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
-import SearchBar from '../components/SearchBar';
+
 import { Grid } from '@material-ui/core';
+
+import SearchBar from '../components/SearchBar';
+import SearchResults from '../components/SearchResults';
 
 class SearchPage extends Component {
 
     state = {
-        query: ''
+        query: '',
+        ready: false
     }
 
     updateQuery = (event) => {
         this.setState({
-            query: event.target.value.trim()
+            query: event.target.value,
+            ready: false
         })
     }
 
     handleClick = (event) => {
-        console.log(this.state.query);
+        this.setState({
+            ready: true
+        })
     }
 
     render() {
+
+        const { query, ready } = this.state;
+
         return (
             <div className="search-page">
                 <Grid container>
@@ -28,6 +38,9 @@ class SearchPage extends Component {
                     </Grid>
                     <Grid item xs={4}>
                         <SearchBar updateQuery={this.updateQuery} handleClick={this.handleClick} />
+                    </Grid>
+                    <Grid item xs={12}>
+                        {ready && <SearchResults query={query}/>}
                     </Grid>
                 </Grid>
             </div>

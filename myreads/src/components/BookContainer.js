@@ -4,30 +4,10 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Typography from '@material-ui/core/Typography';
 
 import * as BooksAPI from '../api/BooksAPI';
 
 import CustomizedDialog from './CustomizedDialog';
-
-const options = [
-    {
-        value: "currentlyReading",
-        desc: "Currently Reading"
-    },
-    {
-        value: "wantToRead",
-        desc: "Want to Read"
-    },
-    {
-        value: "read",
-        desc: "Read"
-    },
-    {
-        value: "others",
-        desc: "Others"
-    },
-];
 
 class BookContainer extends Component {
 
@@ -81,8 +61,6 @@ class BookContainer extends Component {
                     />
                 </GridListTile>
 
-                <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography>
-                <br />
                 <CustomizedDialog
                     selectedValue={this.state.selectedValue}
                     open={this.state.open}

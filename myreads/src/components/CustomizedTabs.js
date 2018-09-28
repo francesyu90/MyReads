@@ -15,7 +15,6 @@ class CustomizedTabs extends Component {
                     <Tab label="Currently Reading" />
                     <Tab label="Want to Read" />
                     <Tab label="Read" />
-                    <Tab label="Others" />
                 </Tabs>
             </div>
         );

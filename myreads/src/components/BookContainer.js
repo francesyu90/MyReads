@@ -13,9 +13,11 @@ class BookContainer extends Component {
         return (
             <div className="book-container" key={book.id}>
                 <GridListTile style={{ width: 250, height: 225 }}>
-                    <img 
+                    { book.imageLinks && 
+                        <img 
                         src={book.imageLinks.thumbnail}
                         alt={book.title} />
+                    }
                     <GridListTileBar
                         title={book.title}
                         subtitle={<span>by: {book.authors} </span>}

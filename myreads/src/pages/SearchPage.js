@@ -14,6 +14,10 @@ class SearchPage extends Component {
         })
     }
 
+    handleClick = (event) => {
+        console.log(this.state.query);
+    }
+
     render() {
         return (
             <div className="search-page">
@@ -23,8 +27,7 @@ class SearchPage extends Component {
                     <Grid item xs={4}>
                     </Grid>
                     <Grid item xs={4}>
-                        <SearchBar updateQuery={this.updateQuery} />
-                        Query: {this.state.query}
+                        <SearchBar updateQuery={this.updateQuery} handleClick={this.handleClick} />
                     </Grid>
                 </Grid>
             </div>

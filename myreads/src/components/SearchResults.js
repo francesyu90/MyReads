@@ -19,7 +19,9 @@ class SearchResults extends Component {
 
     render() {
         return(
-            <BooksContainer books={this.state.books} />
+            <div>
+                { this.state.books.length > 0 && <BooksContainer books={this.state.books} />}
+            </div>
         );
     }
 }

@@ -20,6 +20,25 @@ const styles = {
     },
 };
 
+const options = [
+    {
+        value: "currentlyReading",
+        desc: "Currently Reading"
+    },
+    {
+        value: "wantToRead",
+        desc: "Want to Read"
+    },
+    {
+        value: "read",
+        desc: "Read"
+    },
+    {
+        value: "others",
+        desc: "Others"
+    },
+];
+
 class CustomizedDialog extends Component {
 
     handleClose = () => {

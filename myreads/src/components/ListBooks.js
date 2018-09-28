@@ -5,22 +5,25 @@ import CustomizedTabs from './CustomizedTabs';
 class ListBooks extends Component {
 
     state = {
-        value: 0
+        category: 0, // 0: currently reading, 1: want to read, 2: read
     }
 
-    handleChange(event, value) {
+    handleChange(event, category) {
         this.setState({
-            value: value
+            category: category
         })
     }
     
     render() {
 
-        const { value } = this.state;
+        const { category } = this.state;
 
         return (
             <div>           
-                <CustomizedTabs handleChange={this.handleChange.bind(this)} value={value}/>
+                <CustomizedTabs handleChange={this.handleChange.bind(this)} category={category}/>
+                { category === 0 && <h1> 0 </h1> }
+                { category === 1 && <h1> 1 </h1> }
+                { category === 2 && <h1> 2 </h1> }
             </div>
        );
     }

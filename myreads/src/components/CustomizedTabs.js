@@ -7,11 +7,11 @@ class CustomizedTabs extends Component {
 
     render() {
 
-        const { handleChange, value } = this.props;
+        const { handleChange, category } = this.props;
 
         return (
             <div>
-                <Tabs value={value} onChange={(event, value) => handleChange(event, value)}>
+                <Tabs value={category} onChange={(event, category) => handleChange(event, category)}>
                     <Tab label="Currently Reading" />
                     <Tab label="Want to Read" />
                     <Tab label="Read" />

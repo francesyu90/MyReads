@@ -11,11 +11,30 @@ import CustomizedDialog from './CustomizedDialog';
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
+const options = [
+    {
+        value: "currentlyReading",
+        desc: "Currently Reading"
+    },
+    {
+        value: "wantToRead",
+        desc: "Want to Read"
+    },
+    {
+        value: "read",
+        desc: "Read"
+    },
+    {
+        value: "others",
+        desc: "Others"
+    },
+];
+
 class BookContainer extends Component {
 
     state = {
         open: false,
-        selectedValue: emails[1],
+        selectedValue: options[0].value,
     };
     
     handleClickOpen = () => {
@@ -25,7 +44,7 @@ class BookContainer extends Component {
     };
     
     handleClose = value => {
-        this.setState({ selectedValue: value, open: false });
+        this.setState({ selectedValue: value.value, open: false });
     };
 
     render() {

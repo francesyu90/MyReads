@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 
+import CustomizedTabs from './CustomizedTabs';
+
 class ListBooks extends Component {
+
+    state = {
+        value: 0
+    }
+
+    handleChange(event, value) {
+        this.setState({
+            value: value
+        })
+    }
+    
     render() {
-       return (
-        <div>
-            Hello from ListBooks
-        </div>
+
+        const { value } = this.state;
+
+        return (
+            <div>           
+                <CustomizedTabs handleChange={this.handleChange.bind(this)} value={value}/>
+            </div>
        );
     }
 }

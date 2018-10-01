@@ -1,41 +1,10 @@
 # MyReads
-A bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. 
 
 ## Project Description
+A bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. 
 
-In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:
+## To Run Application
 
-* Currently Reading
-* Want to Read
-* Read
-
-Each book has a control that lets you select the shelf for that book. When you select a different shelf, the book moves there. Note that the default value for the control should always be the current shelf the book is in.
-
-The main page also has a link to /search, a search page that allows you to find books to add to your library.
-
-The search page has a text input that may be used to find books. When user click the search button, the books that match that query are displayed on the page, along with a control that lets you add the book to your library. 
-[Not fetch books whenever the query changes to avoid IO overheads]
-
-When a book is on a bookshelf, it will no longer appear in the search results.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](#deployment) for more information.
+1. `git clone https://github.com/francesyu90/MyReads.git`
+2. Run `npm install`
+3. Run `npm start` or `yarn start`

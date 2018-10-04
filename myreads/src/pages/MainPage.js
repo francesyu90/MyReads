@@ -6,11 +6,9 @@ class MainPage extends Component {
 
     render() {
 
-        const { allBooks } = this.props;
-
         return (
             <div className="main-page">
-                <ListBooks books={allBooks} />
+                <ListBooks />
             </div>
         );
     }

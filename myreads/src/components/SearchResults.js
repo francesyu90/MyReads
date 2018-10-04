@@ -6,18 +6,10 @@ import BooksContainer from './BooksContainer';
 class SearchResults extends Component {
 
     state = {
-        books: [],
-        allBooks: []
+        books: []
     }
 
     componentDidMount() {
-
-        BooksAPI.getAll().then((books) => {
-            this.setState(() => ({
-                allBooks: books
-            }));
-        });
-
         BooksAPI.search(this.props.query).then((books) => {
             this.setState(() => ({
                 books: books
@@ -27,7 +19,9 @@ class SearchResults extends Component {
 
     render() {
 
-        const { allBooks, books } = this.state;
+        const { books } = this.state;
+
+        const { allBooks } = this.props;
 
         const allBookIds = allBooks.map(book => book.id);
         

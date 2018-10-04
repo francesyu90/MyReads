@@ -29,8 +29,13 @@ class BookContainer extends Component {
     };
 
     updateShelf = book => {
-        if (book.shelf !== this.state.selectedValue) {
-            BooksAPI.update(book, this.state.selectedValue).then(res => {
+        
+        const { selectedValue } = this.state;
+
+        const shelfToBeUpdated = selectedValue !== "" ? selectedValue : undefined;
+
+        if (book.shelf !== shelfToBeUpdated) {
+            BooksAPI.update(book, shelfToBeUpdated).then(res => {
                 if (res) {
                     window.location.reload();
                 }

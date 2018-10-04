@@ -8,6 +8,8 @@ import { Route } from 'react-router-dom';
 import SearchPage from './pages/SearchPage';
 import MainPage from './pages/MainPage';
 
+const AppContext = React.createContext();
+
 class App extends Component {
 
     state = {
@@ -31,16 +33,24 @@ class App extends Component {
 
                 <CustomizedNavbar />
 
-                <Route exact path = "/" render={() => (
-                    <MainPage allBooks={allBooks} />
-                )} />
-                
-                <Route exact path = "/search" render={() => (
-                    <SearchPage allBooks={allBooks} />
-                )} />
+                <AppContext.Provider value={{
+                    allBooks: allBooks
+                }}>
+
+                    <Route exact path = "/" render={() => (
+                        <MainPage allBooks={allBooks} />
+                    )} />
+
+                    <Route exact path = "/search" render={() => (
+                        <SearchPage allBooks={allBooks} />
+                    )} />
+
+                </AppContext.Provider>
             </div>
         );
     }
 }
 
 export default App;
+
+export const AppContextConsumer = AppContext.Consumer;

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import * as BooksAPI from '../api/BooksAPI';
 import BooksContainer from './BooksContainer';
 
+import { AppContextConsumer } from '../App';
+
 class SearchResults extends Component {
 
     state = {
@@ -17,19 +19,27 @@ class SearchResults extends Component {
         });
     }
 
+    filterBooks(allBooks, books) {
+
+        const allBookIds = allBooks.map(book => book.id);
+        
+        return books.filter(book => allBookIds.indexOf(book.id) < 0);
+    }
+
     render() {
 
         const { books } = this.state;
 
-        const { allBooks } = this.props;
-
-        const allBookIds = allBooks.map(book => book.id);
-        
-        const filteredBooks = books.filter(book => allBookIds.indexOf(book.id) < 0);
-
         return(
             <div>
-                { this.state.books && this.state.books.length > 0 && <BooksContainer books={filteredBooks} />}
+                <AppContextConsumer>
+                    { ({ allBooks }) => (
+                        <div>
+                            { this.state.books && this.state.books.length > 0 && <BooksContainer books={this.filterBooks(allBooks, books)} />}
+                        </div>
+                    )}
+                </AppContextConsumer>
+                
             </div>
         );
     }

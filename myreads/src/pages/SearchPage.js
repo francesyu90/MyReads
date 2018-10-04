@@ -29,6 +29,8 @@ class SearchPage extends Component {
 
         const { query, ready } = this.state;
 
+        const { allBooks } = this.props;
+
         return (
             <div className="search-page">
                 <Grid container>
@@ -40,7 +42,7 @@ class SearchPage extends Component {
                         <SearchBar updateQuery={this.updateQuery} handleClick={this.handleClick} />
                     </Grid>
                     <Grid item xs={12}>
-                        {ready && <SearchResults query={query}/>}
+                        {ready && <SearchResults query={query} allBooks={allBooks} />}
                     </Grid>
                 </Grid>
             </div>

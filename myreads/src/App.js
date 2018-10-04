@@ -41,9 +41,7 @@ class App extends Component {
                         <MainPage allBooks={allBooks} />
                     )} />
 
-                    <Route exact path = "/search" render={() => (
-                        <SearchPage allBooks={allBooks} />
-                    )} />
+                    <Route exact path = "/search" component={SearchPage} />
 
                 </AppContext.Provider>
             </div>

@@ -29,8 +29,8 @@ const options = [
         desc: "Read"
     },
     {
-        value: "",
-        desc: "None"
+        value: "others",
+        desc: "Others"
     },
 ];
 

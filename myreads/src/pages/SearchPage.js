@@ -13,10 +13,19 @@ class SearchPage extends Component {
     }
 
     updateQuery = (event) => {
-        this.setState({
-            query: event.target.value,
-            ready: false
-        })
+        
+        const query = event.target.value;
+
+        if (query.length >= 3) {
+            this.setState({
+                query: query,
+                ready: true
+            })
+        } else {
+            this.setState({
+                ready: false
+            })
+        }
     }
 
     handleClick = (event) => {

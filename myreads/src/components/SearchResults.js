@@ -19,11 +19,18 @@ class SearchResults extends Component {
         });
     }
 
-    filterBooks(allBooks, books) {
+    assignBookToShelf(allBooks, books) {
 
         const allBookIds = allBooks.map(book => book.id);
-        
-        return books.filter(book => allBookIds.indexOf(book.id) < 0);
+
+        return books.map(book => {
+
+            const bookIndex = allBookIds.indexOf(book.id);
+
+            book.shelf = bookIndex? "none" : allBooks[bookIndex]
+
+            return book;
+        });
     }
 
     render() {
@@ -38,7 +45,7 @@ class SearchResults extends Component {
                             { 
                                 this.state.books && 
                                 this.state.books.length > 0 && 
-                                <BooksContainer books={this.filterBooks(allBooks, books)} />
+                                <BooksContainer books={this.assignBookToShelf(allBooks, books)} />
                             }
                         </div>
                     )}

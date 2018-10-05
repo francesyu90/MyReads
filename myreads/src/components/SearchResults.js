@@ -35,7 +35,11 @@ class SearchResults extends Component {
                 <AppContextConsumer>
                     { ({ allBooks }) => (
                         <div>
-                            { this.state.books && this.state.books.length > 0 && <BooksContainer books={this.filterBooks(allBooks, books)} />}
+                            { 
+                                this.state.books && 
+                                this.state.books.length > 0 && 
+                                <BooksContainer books={this.filterBooks(allBooks, books)} />
+                            }
                         </div>
                     )}
                 </AppContextConsumer>

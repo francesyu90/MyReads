@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import blue from '@material-ui/core/colors/blue';
 import { withStyles } from '@material-ui/core/styles';
+import { MenuItem } from '@material-ui/core';
 
 const styles = {
     avatar: {
@@ -54,9 +53,13 @@ class CustomizedDialog extends Component {
                 <div>
                     <List>
                         {options.map(option => (
-                            <ListItem button onClick={() => this.handleListItemClick(option)} key={option.value}>
-                                <ListItemText primary={option.desc} />
-                            </ListItem>
+                            <MenuItem 
+                                key={option.value} 
+                                selected={option.value === selectedValue? true : false}
+                                onClick={() => this.handleListItemClick(option)}
+                            >
+                                {option.desc}
+                            </MenuItem>
                         ))}
                     </List>
                 </div>

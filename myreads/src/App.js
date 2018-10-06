@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+
+import { Route } from 'react-router-dom';
+
+import CustomizedNavbar from './components/CustomizedNavbar';
+import SearchPage from './pages/SearchPage';
+import MainPage from './pages/MainPage';
 import './App.css';
 
 import * as BooksAPI from './api/BooksAPI';
-
-import CustomizedNavbar from './components/CustomizedNavbar';
-import { Route } from 'react-router-dom';
-import SearchPage from './pages/SearchPage';
-import MainPage from './pages/MainPage';
 
 const AppContext = React.createContext();
 

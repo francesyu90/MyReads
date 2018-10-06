@@ -6,7 +6,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 import * as BooksAPI from '../api/BooksAPI';
-
 import CustomizedDialog from './CustomizedDialog';
 
 class BookContainer extends Component {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import CustomizedTabs from './CustomizedTabs';
 import BooksContainer from './BooksContainer';
-
 import { AppContextConsumer } from '../App';
 
 const shelves = ["currentlyReading", "wantToRead", "read"];

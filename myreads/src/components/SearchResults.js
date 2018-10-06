@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import * as BooksAPI from '../api/BooksAPI';
 import BooksContainer from './BooksContainer';
-
 import { AppContextConsumer } from '../App';
+
+import * as BooksAPI from '../api/BooksAPI';
 
 class SearchResults extends Component {
 

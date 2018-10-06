@@ -23,7 +23,7 @@ class SearchResults extends Component {
 
         const allBookIds = allBooks.map(book => book.id);
 
-        const booksWithShelfAssigned = books.map(book => {
+        return books.map(book => {
 
             const bookIndex = allBookIds.indexOf(book.id);
 
@@ -31,8 +31,6 @@ class SearchResults extends Component {
 
             return book;
         });
-
-        return booksWithShelfAssigned.filter(book => book.shelf === "none");
     }
 
     render() {

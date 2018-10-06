@@ -6,5 +6,6 @@ A bookshelf app that allows you to select and categorize books you have read, ar
 ## To Run Application
 
 1. `git clone https://github.com/francesyu90/MyReads.git`
-2. Run `npm install`
-3. Run `npm start` or `yarn start`
+2. `cd myreads`
+3. Run `npm install`
+4. Run `npm start` or `yarn start`
